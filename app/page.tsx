@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 
-
 export default function Home() {
   const [todo, setTodo] = useState([
     { task: "Doing HomeWork", id: 1 },
