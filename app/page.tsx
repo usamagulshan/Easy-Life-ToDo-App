@@ -2,8 +2,13 @@
 
 import { useState } from "react";
 
+interface Task {
+  task:string
+  id:number
+}
+
 export default function Home() {
-  const [todo, setTodo] = useState([
+  const [todo, setTodo] = useState<Task[]>([
     { task: "Doing HomeWork", id: 1 },
     { task: "Reading Books", id: 2 },
   ]);
@@ -12,7 +17,7 @@ export default function Home() {
   const [id, setId] = useState(0);
 
   function addItem() {
-    const obj: any = todo.find((item) => item.id == id);
+    const obj = todo.find((item) => item.id == id);
     if (obj) {
       const newArr = todo.filter((item) => item.id != obj.id);
       setTodo([...newArr, { task: inputVal, id: id }]);
@@ -26,13 +31,13 @@ export default function Home() {
     setId(0);
   }
 
-  function editItem(id: any) {
-    const obj: any = todo.find((item) => item.id == id);
+  function editItem(id:number) {
+    const obj = todo.find((item) => item.id == id);
     setInput(obj.task);
     setId(obj.id);
   }
 
-  function DelItem(id: any) {
+  function DelItem(id:number) {
     const newArr = todo.filter((item) => item.id != id);
     setTodo([...newArr]);
   }
