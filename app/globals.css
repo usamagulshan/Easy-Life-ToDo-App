@@ -2,20 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  padding: 0;
+  border: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.main {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+h1 {
+  font-size: 50px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: rgb(13, 214, 13);
+  text-decoration: underline rgb(72, 152, 72);
+}
+
+.input-here {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  font-size: 15px;
+}
+
+.task-name {
+  width: 60%;
+  padding: 10px;
+  border-bottom: 2px solid rgb(240, 240, 240);
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid rgb(81, 217, 81);
+  border-radius: 4px;
+}
+
+.task-id {
+  width: 20%;
+  padding: 10px;
+  border-bottom: 2px solid rgb(240, 240, 240);
+}
+
+.add-item {
+  width: 20%;
+  background-color: rgb(13, 214, 13);
+  border-radius: 4px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+}
+
+.grid-data {
+  border: 1px solid rgb(81, 217, 81);
+  border-radius: 4px;
+}
+
+.col1 {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 10px;
+}
+
+.col-data {
+  font-size: 40px;
+  margin: 0px 10px;
+}
+
+
+.x{
+    border-radius: 50%;
+    border: 1px solid rgb(183, 180, 180);
+    width: 25px;
+    text-align: center;
+    margin-top: 5px;
 }
