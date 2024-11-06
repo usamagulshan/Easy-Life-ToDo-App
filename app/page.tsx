@@ -12,9 +12,9 @@ export default function Home() {
   const [id, setId] = useState(0);
 
   function addItem() {
-    let obj: any = todo.find((item) => item.id == id);
+    const obj: any = todo.find((item) => item.id == id);
     if (obj) {
-      let newArr = todo.filter((item) => item.id != obj.id);
+      const newArr = todo.filter((item) => item.id != obj.id);
       setTodo([...newArr, { task: inputVal, id: id }]);
       setInput("");
       setId(0);
