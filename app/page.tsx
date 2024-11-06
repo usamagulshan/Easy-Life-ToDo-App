@@ -27,14 +27,14 @@ export default function Home() {
   }
 
   function editItem(id: any) {
-    let obj: any = todo.find((item) => item.id == id);
+    const obj: any = todo.find((item) => item.id == id);
     setInput(obj.task);
     setId(obj.id);
   }
 
-  function DelItem (id:any){
-    let newArr = todo.filter((item) => item.id != id);
-      setTodo([...newArr]);
+  function DelItem(id: any) {
+    const newArr = todo.filter((item) => item.id != id);
+    setTodo([...newArr]);
   }
 
   return (
@@ -79,7 +79,14 @@ export default function Home() {
             <div className="grid-data" key={index}>
               <div className="col1">
                 <span className="x">{index + 1}</span>
-                <span onClick={function () {DelItem(item.id)}} className="x cursor-pointer">X</span>
+                <span
+                  onClick={function () {
+                    DelItem(item.id);
+                  }}
+                  className="x cursor-pointer"
+                >
+                  X
+                </span>
               </div>
 
               <div className="col-data">
